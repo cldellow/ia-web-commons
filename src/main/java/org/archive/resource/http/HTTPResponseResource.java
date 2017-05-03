@@ -7,6 +7,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Logger;
 
+
 import org.archive.format.http.HttpHeader;
 import org.archive.format.http.HttpResponse;
 import org.archive.format.http.HttpResponseMessage;
@@ -19,8 +20,8 @@ import org.archive.util.StreamCopy;
 import org.archive.util.io.EOFNotifyingInputStream;
 import org.archive.util.io.EOFObserver;
 
-import com.google.common.io.ByteStreams;
 import com.google.common.io.CountingInputStream;
+import com.google.common.io.LimitInputStream;
 
 
 
@@ -64,7 +65,7 @@ implements ResourceConstants, EOFObserver {
 			headers.putString(h.getName(),h.getValue());
 		}
 		if(forceCheck && (length >= 0)) {
-			InputStream lis = ByteStreams.limit(response, length);
+			LimitInputStream lis = new LimitInputStream(response, length);
 			countingIS = new CountingInputStream(lis);
 		} else {
 			countingIS = new CountingInputStream(response);

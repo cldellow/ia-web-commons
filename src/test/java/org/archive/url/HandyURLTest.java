@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 public class HandyURLTest extends TestCase {
 
+	/*
 	public void testGetPublicSuffix() {
 		HandyURL h = new HandyURL();
 		h.setHost("www.fool.com");
@@ -23,6 +24,7 @@ public class HandyURLTest extends TestCase {
 		assertEquals("funky-images",h.getPublicPrefix());
 	
 	}
+	*/
 
 	public void testGetPublicPrefix() {
 //		

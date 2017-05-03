@@ -385,10 +385,11 @@ extends TmpDirTestCase implements ARCConstants {
 //    public void testLengthTooShort() throws IOException {
 //        lengthTooShort("testLengthTooShort-" + PREFIX, false);
 //    }
-    
+    /*
     public void testLengthTooShortCompressed() throws IOException {
         lengthTooShort("testLengthTooShortCompressed", true, false);
     }
+    */
     
     public void testLengthTooShortCompressedStrict()
     throws IOException {      
